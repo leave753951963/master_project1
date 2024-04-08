@@ -62,8 +62,8 @@ def write_SA(PE_number,FAULT_coordinate,target_path,module_name):
                     pass
         sa_list = [" | 16'b0000000000000001"," | 16'b0000000000000010"," | 16'b0000000000000100"," | 16'b0000000000001000"," | 16'b0000000000010000"," | 16'b0000000000100000"," | 16'b0000000001000000"," | 16'b0000000010000000"," | 16'b0000000100000000"," | 16'b0000001000000000"," | 16'b0000010000000000"," | 16'b0000100000000000"," | 16'b0001000000000000"," | 16'b0010000000000000"," | 16'b0100000000000000"," | 16'b1000000000000000"," & 16'b1111111111111110"," & 16'b1111111111111101"," & 16'b1111111111111011"," & 16'b1111111111110111"," & 16'b1111111111101111"," & 16'b1111111111011111"," & 16'b1111111110111111"," & 16'b1111111101111111"," & 16'b1111111011111111"," & 16'b1111110111111111"," & 16'b1111101111111111"," & 16'b1111011111111111"," & 16'b1110111111111111"," & 16'b1101111111111111"," & 16'b1011111111111111"," & 16'b0111111111111111"]
         
-        for n in range(PE_number):
-            for j in range(PE_number):
+        for j in range(PE_number):
+            for n in range(PE_number):
                 if ((n,j) in FAULT_coordinate):
                     sa_value = random.choice(sa_list)#random stuck at fault
                     #print("("+str(n)+","+str(j)+")")
@@ -167,10 +167,9 @@ if __name__ == "__main__":
     module_name = "SA32"#module name
     sub_dir  = "/home/wzc/master_project/verilog/systolic_array"#file path
     
-    PE_number = 32 #PE number
-    
+    PE_number = 32 #PE number#
     #---------------------對PE INJECT FAULT
-    NUM_FAULTY_PE = 51
+    NUM_FAULTY_PE = 76
     coordinate_path = os.path.join(sub_dir,fault_coordinate_file) 
     random_list = list(itertools.product(range(0,PE_number-1),range(0,PE_number-1))) #產生隨機座標
     FAULT_coordinate = random.sample(random_list,NUM_FAULTY_PE)
