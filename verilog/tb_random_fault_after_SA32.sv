@@ -1,6 +1,6 @@
 
 `timescale 1ns / 1ps
-`include "./systolic_array/SA32_random_fault.v"
+`include "./systolic_array/SA32_random_fault_protected.v"
 `define CYCLE 		10.0
 `define End_CYCLE  	1000000
 `define IN_FEATUREMAP	""
@@ -132,24 +132,24 @@ reg [3:0] Label_now;
 reg signed[15:0]Input_mem[0:(10000*28*28)-1];
 reg signed[15:0] Input_feature[27:0][27:0];	
 reg signed[15:0] input_conv1[599:0][24:0];
-reg signed[15:0] conv1_kernel[5:0][24:0];//5x5çŸ©é™£æœ‰6å€‹,ä¸€å€‹çŸ©é™£æ”¤æˆä¸€raw
-reg signed[15:0] conv1_output[144:0][23:0];//6å€‹24*24çš„çŸ©é™£
+reg signed[15:0] conv1_kernel[5:0][24:0];//5x5¯x°}¦³6­Ó,¤@­Ó¯x°}Åu¦¨¤@raw
+reg signed[15:0] conv1_output[144:0][23:0];//6­Ó24*24ªº¯x°}
 reg	signed[15:0] bias_conv1[0:5];
-reg signed[15:0] maxpool1[71:0][11:0];//12*12æœ‰å…­å€‹
+reg signed[15:0] maxpool1[71:0][11:0];//12*12¦³¤»­Ó
 
 reg signed[15:0] input_conv2[527:0][24:0];
-reg	signed[15:0] conv2_kernel1[95:0][24:0];//5x5çŸ©é™£æœ‰6å€‹,å…±16çµ„ï¼Œä¸€å€‹çŸ©é™£æ”¤æˆä¸€raw
-reg signed[15:0] conv2_output[127:0][7:0];//8*8çŸ©é™£æœ‰16å€‹
+reg	signed[15:0] conv2_kernel1[95:0][24:0];//5x5¯x°}¦³6­Ó,¦@16²Õ¡A¤@­Ó¯x°}Åu¦¨¤@raw
+reg signed[15:0] conv2_output[127:0][7:0];//8*8¯x°}¦³16­Ó
 reg	signed[15:0] bias_conv2[0:15];
 reg signed[15:0] maxpool2[63:0][3:0];
 reg signed[15:0] FC1_input[255:0][31:0];
-reg signed[15:0] FC1[119:0][255:0];//256*120 120åŒ…ç¶­åº¦ç‚º256*1çš„çŸ©é™£
+reg signed[15:0] FC1[119:0][255:0];//256*120 120¥]ºû«×¬°256*1ªº¯x°}
 reg signed[15:0] FC1_output[119:0];
 reg signed[15:0] FC2_input[127:0][31:0];
-reg signed[15:0] FC2[83:0][127:0];//120ä¸€åŒ… å…±84å€‹output å³é‚Šå†åŠ 8æ¬„0
+reg signed[15:0] FC2[83:0][127:0];//120¤@¥] ¦@84­Óoutput ¥kÃä¦A¥[8Äæ0
 reg signed[15:0] FC2_output[83:0];
 reg signed[15:0] FC3_input[95:0][31:0];
-reg signed[15:0] FC3[9:0][95:0];//84ä¸€åŒ… é‹ç®—å‡ºä¸€å€‹output,å…±10çµ„ å³é‚Šå†åŠ 12æ¬„0
+reg signed[15:0] FC3[9:0][95:0];//84¤@¥] ¹Bºâ¥X¤@­Óoutput,¦@10²Õ ¥kÃä¦A¥[12Äæ0
 reg signed[15:0] FC3_output[9:0];
 reg signed[15:0] bias_FC1[0:119];
 reg signed[15:0] bias_FC2[0:83];
@@ -342,7 +342,7 @@ always@(negedge clk)begin
 	write_condition = (total_predic_num ==0)?1:0;
 end
 initial begin
-  file_acc = $fopen("acc_fault.txt", "a");
+  file_acc = $fopen("acc_fault_after.txt", "a");
   file_handle0 = $fopen("output0.txt", "w");
   file_handle1 = $fopen("output1.txt", "w");
   file_handle2 = $fopen("output2.txt", "w");
@@ -382,14 +382,14 @@ end
 
 task initialize_input_conv1; 
 
-for(r=0;r<600;r++)begin//å…ˆæŠŠæ•´å€‹çŸ©é™£æ­¸0
+for(r=0;r<600;r++)begin//¥ı§â¾ã­Ó¯x°}Âk0
 	for(c=0;c<25;c++)begin
 		input_conv1[r][c] = 0;
 		
 		//$display("input_conv1[%d][%d]",r,c);			
 	end
 end
-	for(r=0;r<(28-4);r++)begin//è½‰å¥½çš„çŸ©é™£input_conv1(600*25)
+	for(r=0;r<(28-4);r++)begin//Âà¦nªº¯x°}input_conv1(600*25)
 		for(c=0;c<(28-4);c++)begin
 			for(i=0;i<5;i++)begin
 				for(j=0;j<5;j++)begin
@@ -399,7 +399,7 @@ end
 			end
 		end
 	end	
-for(r=0;r<200;r++)begin//å…ˆæŠŠæ•´å€‹çŸ©é™£æ­¸0
+for(r=0;r<200;r++)begin//¥ı§â¾ã­Ó¯x°}Âk0
 	for(c=0;c<25;c++)begin
 		//$display("input_conv1[%d][%d] = %d",r,c,input_conv1[r][c]);			
 	end
@@ -411,7 +411,7 @@ int input_conv1_cnt;
 always@(negedge clk) begin
 	if(rst ==1)begin
 	input_conv1_cnt = 0;end
-	else if(op_conv1_en == 1)begin//conv1é‹ç®— è¼¸å…¥input
+	else if(op_conv1_en == 1)begin//conv1¹Bºâ ¿é¤Jinput
 			for(i=0;i<32;i++)begin//
 				if(i<25)begin//(activation[0~24])
 				in_activation[i] =  input_conv1[input_conv1_cnt][i];
@@ -431,7 +431,7 @@ end
 //===============mapping weight =======================
 
 int	conv1_count;
-always @(negedge clk ) begin//conv1 weight æ”¾å…¥ in_weight
+always @(negedge clk ) begin//conv1 weight ©ñ¤J in_weight
 	if(rst == 1)begin
 		conv1_count = 0;end
 	else if(conv1_en == 1) begin
@@ -496,14 +496,14 @@ always @(negedge clk ) begin
 			end
 			if(FC1_times<3)begin
 				for(i=0;i<32;i++)begin
-					in_weight[i] = FC1[(FC1_times*32)+i][((FC1_round%8)*32)+31-FC1_count];//ç”±å¾Œå¾€å‰æ”¾
+					in_weight[i] = FC1[(FC1_times*32)+i][((FC1_round%8)*32)+31-FC1_count];//¥Ñ«á©¹«e©ñ
 				end
 			end
 			else if(FC1_times==3)begin
 				for(i=0;i<24;i++)begin
 					in_weight[i] = FC1[(FC1_times*32)+i][((FC1_round%8)*32)+31-FC1_count];
 					//$display("FC1[%d][%d]",((FC1_times*32)+i),((FC1_round%8)*32)+31-FC1_count);
-				end//ç”±å¾Œå¾€å‰æ”¾
+				end//¥Ñ«á©¹«e©ñ
 				
 			end
 			FC1_count = FC1_count+1;
@@ -535,14 +535,14 @@ always @(negedge clk ) begin
 			if(FC2_round<8)begin
 				for(i=0;i<32;i++)begin
 					
-					in_weight[i] = FC2[(FC2_times*32)+i][((FC2_round%4)*32)+31-FC2_count];//ç”±å¾Œå¾€å‰æ”¾
+					in_weight[i] = FC2[(FC2_times*32)+i][((FC2_round%4)*32)+31-FC2_count];//¥Ñ«á©¹«e©ñ
 					//$display("in_weight[%d] = FC2[%d][%d]",i,(FC2_times*32)+i,((FC2_round%4)*32)+31-FC2_count);
 					
 				end
 			end
 			else begin
 				for(i=0;i<20;i++)begin
-					in_weight[i] = FC2[(FC2_times*32)+i][((FC2_round%4)*32)+31-FC2_count];//ç”±å¾Œå¾€å‰æ”¾
+					in_weight[i] = FC2[(FC2_times*32)+i][((FC2_round%4)*32)+31-FC2_count];//¥Ñ«á©¹«e©ñ
 					//$display("in_weight[%d] = FC2[%d][%d]",i,(FC2_times*32)+i,((FC2_round%4)*32)+31-FC2_count);
 				end
 			end
@@ -573,8 +573,8 @@ always @(negedge clk ) begin
 			$display("----------FC3_weight is being transmitted----------");
 			end
 			
-				for(i=0;i<10;i++)begin//weight0~9ä¸€èµ·æ”¾
-					in_weight[i] = FC3[i][((FC3_round)*32)+31-FC3_count];//ç”±å¾Œå¾€å‰æ”¾
+				for(i=0;i<10;i++)begin//weight0~9¤@°_©ñ
+					in_weight[i] = FC3[i][((FC3_round)*32)+31-FC3_count];//¥Ñ«á©¹«e©ñ
 					//$display("in_weight[%d] = %d",i,FC3[i][((FC3_round%4)*32)+31-FC3_count]);
 					end
 			
@@ -590,15 +590,15 @@ always @(negedge clk ) begin
 			end
 	end
 end	
-//===================å­˜å–conv1 outputä¸¦åšbias relu maxpooling1=====================
+//===================¦s¨úconv1 output¨Ã°µbias relu maxpooling1=====================
 int op_out_cnt;
 reg signed[15:0] temp;
 
 reg signed[31:0]product;
-reg signed[15:0] sim_conv1_output[144:0][23:0];//6å€‹24*24çš„çŸ©é™£
-reg signed[15:0] sim_maxpool1[71:0][11:0];//12*12æœ‰å…­å€‹
+reg signed[15:0] sim_conv1_output[144:0][23:0];//6­Ó24*24ªº¯x°}
+reg signed[15:0] sim_maxpool1[71:0][11:0];//12*12¦³¤»­Ó
 reg signed [25:10] truncated_number;
-always @(negedge clk ) begin//å­˜å–conv1 output(24*24)
+always @(negedge clk ) begin//¦s¨úconv1 output(24*24)
 	if(rst == 1)begin 
 		op_out_cnt = 0;end
 	else if(RECEIVE_conv1_out == 1)begin
@@ -633,7 +633,7 @@ always @(negedge clk ) begin//å­˜å–conv1 output(24*24)
 			#(`CYCLE)
 			RECEIVE_conv1_out = 0; 
 			op_out_cnt = 0;
-			//--------------sim---------------//conv1æ¯”å°
+			//--------------sim---------------//conv1¤ñ¹ï
 			for(i=0;i<144;i++)begin
 				for(j=0;j<24;j++)begin
 				sim_conv1_output[i][j] = 16'd0;
@@ -732,7 +732,7 @@ always @(negedge clk ) begin//å­˜å–conv1 output(24*24)
 			
 			//================img2col===================	
 			
-			for(r=0;r<528;r++)begin//å…ˆæŠŠæ•´å€‹çŸ©é™£æ­¸0 ((24+64)*6)
+			for(r=0;r<528;r++)begin//¥ı§â¾ã­Ó¯x°}Âk0 ((24+64)*6)
 				for(c=0;c<25;c++)begin
 					input_conv2[r][c] = 0;
 					
@@ -740,7 +740,7 @@ always @(negedge clk ) begin//å­˜å–conv1 output(24*24)
 				end
 			end
 				for(k=0;k<6;k++)begin
-					for(r=0;r<(12-4);r++)begin//è½‰å¥½çš„çŸ©é™£input_conv2(528*25)
+					for(r=0;r<(12-4);r++)begin//Âà¦nªº¯x°}input_conv2(528*25)
 						for(c=0;c<(12-4);c++)begin
 							for(i=0;i<5;i++)begin
 								for(j=0;j<5;j++)begin
@@ -766,7 +766,7 @@ int input_conv2_cnt;
 always@(negedge clk) begin
 	if(rst ==1)begin
 	input_conv2_cnt = 0;end
-	else if(op_conv2_en == 1)begin//conv1é‹ç®— è¼¸å…¥input
+	else if(op_conv2_en == 1)begin//conv1¹Bºâ ¿é¤Jinput
 			for(i=0;i<32;i++)begin
 				if(i<25)begin
 					in_activation[i] =  input_conv2[input_conv2_cnt][i];
@@ -782,16 +782,16 @@ always@(negedge clk) begin
 			end	
 	end
 end
-//=======================å­˜å–conv2 outputä¸¦åšbias relu=================
+//=======================¦s¨úconv2 output¨Ã°µbias relu=================
 int num_out;
 reg signed[15:0]sim_conv2_output[127:0][7:0];
 reg signed[15:0]sim_maxpool2[63:0][3:0];
-always @(negedge clk ) begin//å­˜å–conv1 output(24*24)
+always @(negedge clk ) begin//¦s¨úconv1 output(24*24)
 	if(rst == 1)begin
 		op_out_cnt = 0;end
 	else if(RECEIVE_conv2_out == 1)begin
 		
-		if(op_out_cnt == 0 && conv2_times == 1)begin//åˆå§‹conv2_outputå…ˆæ­¸0
+		if(op_out_cnt == 0 && conv2_times == 1)begin//ªì©lconv2_output¥ıÂk0
 			for(i=0;i<128;i++)begin
 				for(j=0;j<8;j++)begin
 					conv2_output[i][j] = 16'd0;
@@ -846,7 +846,7 @@ always @(negedge clk ) begin//å­˜å–conv1 output(24*24)
 		end
 		op_out_cnt = op_out_cnt+1;
 		//$display("op_out_cnt = %d",op_out_cnt);
-		if(op_out_cnt%(8*8+15) == 0)begin //æ¯ä¸€è¼ªåšå®Œéƒ½æ­¸é›¶
+		if(op_out_cnt%(8*8+15) == 0)begin //¨C¤@½ü°µ§¹³£Âk¹s
 			#(`CYCLE)
 			RECEIVE_conv2_out = 0;
 			op_out_cnt = 0;
@@ -903,7 +903,7 @@ always @(negedge clk ) begin//å­˜å–conv1 output(24*24)
 					end
 				end
 				//----------------------------
-				for(i=0;i<64;i++)begin//max pooling out(4*4*16)ç‚º
+				for(i=0;i<64;i++)begin//max pooling out(4*4*16)¬°
 					for(j=0;j<4;j++)begin
 						temp = conv2_output[(i*2)][(j*2)];
 						for(r=0;r<2;r++)begin
@@ -921,7 +921,7 @@ always @(negedge clk ) begin//å­˜å–conv1 output(24*24)
 					end
 				end
 				//--------sim---------------
-				for(i=0;i<64;i++)begin//max pooling out(4*4*16)ç‚º
+				for(i=0;i<64;i++)begin//max pooling out(4*4*16)¬°
 					for(j=0;j<4;j++)begin
 						temp = sim_conv2_output[(i*2)][(j*2)];
 						for(r=0;r<2;r++)begin
@@ -935,19 +935,19 @@ always @(negedge clk ) begin//å­˜å–conv1 output(24*24)
 					end
 				end
 				//--------------------------
-				for(i=0;i<256;i++)begin//å°‡fc1 inputæ­¸é›¶
+				for(i=0;i<256;i++)begin//±Nfc1 inputÂk¹s
 					for(j=0;j<32;j++)begin
 						FC1_input[i][j] = 16'd0;
 					end
 				end
 				
-				for(i=0;i<64;i++)begin//è®Šæˆå¯è¼¸å…¥çš„çŸ©é™£(32*256)
+				for(i=0;i<64;i++)begin//ÅÜ¦¨¥i¿é¤Jªº¯x°}(32*256)
 					for(j=0;j<4;j++)begin
 						FC1_input[(4*i)+j][((4*i)+j)%32] = maxpool2[i][j];
 						
 					end
 				end
-				for(i=0;i<256;i++)begin//è®Šæˆå¯è¼¸å…¥çš„çŸ©é™£(32*256)
+				for(i=0;i<256;i++)begin//ÅÜ¦¨¥i¿é¤Jªº¯x°}(32*256)
 					for(j=0;j<32;j++)begin
 					//$display("FC1_input[%d][%d] = %d",i,j,FC1_input[i][j]);
 					end
@@ -961,7 +961,7 @@ int input_FC1_cnt;
 always@(negedge clk) begin
 	if(rst ==1)begin
 		input_FC1_cnt = 0;end
-	else if(op_FC1_en == 1)begin//FC1é‹ç®— è¼¸å…¥input
+	else if(op_FC1_en == 1)begin//FC1¹Bºâ ¿é¤Jinput
 			for(i=0;i<32;i++)begin
 					in_activation[i] =  FC1_input[input_FC1_cnt][i];
 				//$display("in_activation[%d] = FC1_input[%d][%d]",i,input_FC1_cnt,i);
@@ -976,7 +976,7 @@ always@(negedge clk) begin
 			end	
 	end
 end
-//=====================å­˜å–FC1 output,bias ReLU================================
+//=====================¦s¨úFC1 output,bias ReLU================================
 
 int receive_num_fc1;
 reg signed[15:0] sim_FC1_output[119:0];
@@ -985,7 +985,7 @@ always @(negedge clk ) begin
 	op_out_cnt = 0;
 	FC1_round = 0;end
 	else if(RECEIVE_FC1_out == 1)begin
-			if(op_out_cnt == 0 && FC1_round == 0)begin//åˆå§‹FC1_outputå…ˆæ­¸0
+			if(op_out_cnt == 0 && FC1_round == 0)begin//ªì©lFC1_output¥ıÂk0
 				for(i=0;i<120;i++)begin
 					FC1_output[i] = 16'd0;
 				end
@@ -1107,7 +1107,7 @@ always @(negedge clk ) begin
 						sim_FC1_output[i] = 0;end
 					end
 					//------------------------
-					for(i=0;i<128;i++)begin//å°‡fc2 inputæ­¸é›¶
+					for(i=0;i<128;i++)begin//±Nfc2 inputÂk¹s
 						for(j=0;j<32;j++)begin
 							FC2_input[i][j] = 16'd0;
 						end
@@ -1125,7 +1125,7 @@ int input_FC2_cnt;
 always@(negedge clk) begin
 	if(rst ==1)begin
 		input_FC2_cnt = 0;end
-	else if(op_FC2_en == 1)begin//FC2é‹ç®— è¼¸å…¥input
+	else if(op_FC2_en == 1)begin//FC2¹Bºâ ¿é¤Jinput
 			for(i=0;i<32;i++)begin
 					in_activation[i] =  FC2_input[input_FC2_cnt][i];//$display("in_activation[%d] =%d",i,input_conv1[input_conv1_cnt][i]);
 			end
@@ -1141,7 +1141,7 @@ always@(negedge clk) begin
 end
 
 
-//==================å­˜å–FC2 output,bias ReLU===============
+//==================¦s¨úFC2 output,bias ReLU===============
 
 int receive_num_fc2;
 reg signed[15:0] sim_FC2_output[83:0];
@@ -1151,7 +1151,7 @@ always @(negedge clk ) begin
 	FC2_round = 0;end
 	else if(RECEIVE_FC2_out == 1)begin
 		
-			if(op_out_cnt == 0 && FC2_round == 0)begin//åˆå§‹FC2_outputå…ˆæ­¸0
+			if(op_out_cnt == 0 && FC2_round == 0)begin//ªì©lFC2_output¥ıÂk0
 				for(i=0;i<84;i++)begin
 					FC2_output[i] = 16'd0;
 				end
@@ -1272,7 +1272,7 @@ always @(negedge clk ) begin
 							sim_FC2_output[i] = 0;end
 					end
 					//------------------
-					for(i=0;i<96;i++)begin//å°‡fc3 inputæ­¸é›¶
+					for(i=0;i<96;i++)begin//±Nfc3 inputÂk¹s
 						for(j=0;j<32;j++)begin
 							FC3_input[i][j] = 16'd0;
 						end
@@ -1291,7 +1291,7 @@ int input_FC3_cnt;
 always@(negedge clk) begin
 	if(rst ==1)begin
 		input_FC3_cnt = 0;end
-	else if(op_FC3_en == 1)begin//FC3é‹ç®— è¼¸å…¥input
+	else if(op_FC3_en == 1)begin//FC3¹Bºâ ¿é¤Jinput
 			for(i=0;i<32;i++)begin
 					in_activation[i] =  FC3_input[input_FC3_cnt][i];
 					//$display("in_activation[%d] =  %d",i,FC3_input[input_FC3_cnt][i]);
@@ -1308,7 +1308,7 @@ always@(negedge clk) begin
 			end	
 	end
 end
-//==================å­˜å–FC3 output,bias ReLU===============
+//==================¦s¨úFC3 output,bias ReLU===============
 
 int receive_num_fc3;
 reg signed[15:0] sim_FC3_output[9:0];
@@ -1318,7 +1318,7 @@ always @(negedge clk ) begin
 	FC3_round = 0;end
 	else if(RECEIVE_FC3_out == 1)begin
 		
-			if(op_out_cnt == 0 && FC3_round == 0)begin//åˆå§‹FC3_outputå…ˆæ­¸0
+			if(op_out_cnt == 0 && FC3_round == 0)begin//ªì©lFC3_output¥ıÂk0
 				for(i=0;i<10;i++)begin
 					FC3_output[i] = 16'd0;
 				end
