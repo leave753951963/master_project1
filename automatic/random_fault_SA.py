@@ -8,7 +8,7 @@ sys.path.append('/home/wzc/lenet/LeNet-5-MNIST-PyTorch/')
 import decimal_to_binary as trans
 import itertools
 
-def write_SA(PE_number,FAULT_coordinate,target_path,module_name):
+def write_SA(PE_number,FAULT_coordinate,target_path,stuckat_fault_path,module_name):
 ##-----write module&declaration
     num_column = PE_number//2
     with open(target_path, "w") as fh:
@@ -51,23 +51,21 @@ def write_SA(PE_number,FAULT_coordinate,target_path,module_name):
                     fh.write("wire signed[15:0]    reg_psum_"+str(r)+"_"+str(c)+";\n")
         for n in range(PE_number):
             fh.write("assign out_psum_"+str(n)+" =  reg_psum_31_"+str(n)+";\n")            
-    #----PE fault-----更改錯誤PE下面一顆的INPUT--------------
-        
-        
+#讀取PE fault stuck at fault    
+        print(FAULT_coordinate)
         for n in range(PE_number):
             for j in range(PE_number):
                 if ((n,j) in FAULT_coordinate):
                     fh.write("wire signed[15:0]    fault_reg_psum_"+str(n)+"_"+str(j)+";\n")
                 else:
                     pass
-        sa_list = [" | 16'b0000000000000001"," | 16'b0000000000000010"," | 16'b0000000000000100"," | 16'b0000000000001000"," | 16'b0000000000010000"," | 16'b0000000000100000"," | 16'b0000000001000000"," | 16'b0000000010000000"," | 16'b0000000100000000"," | 16'b0000001000000000"," | 16'b0000010000000000"," | 16'b0000100000000000"," | 16'b0001000000000000"," | 16'b0010000000000000"," | 16'b0100000000000000"," | 16'b1000000000000000"," & 16'b1111111111111110"," & 16'b1111111111111101"," & 16'b1111111111111011"," & 16'b1111111111110111"," & 16'b1111111111101111"," & 16'b1111111111011111"," & 16'b1111111110111111"," & 16'b1111111101111111"," & 16'b1111111011111111"," & 16'b1111110111111111"," & 16'b1111101111111111"," & 16'b1111011111111111"," & 16'b1110111111111111"," & 16'b1101111111111111"," & 16'b1011111111111111"," & 16'b0111111111111111"]
-        
-        for j in range(PE_number):
-            for n in range(PE_number):
-                if ((n,j) in FAULT_coordinate):
-                    sa_value = random.choice(sa_list)#random stuck at fault
-                    #print("("+str(n)+","+str(j)+")")
-                    fh.write("assign fault_reg_psum_"+str(n)+"_"+str(j)+" = reg_psum_"+str(n)+"_"+str(j)+sa_value+" ;\n")
+        with open(stuckat_fault_path, "r") as fr:
+            sa_value = fr.readlines()
+            sa_value = [line.rstrip('\n') for line in sa_value]
+            k = 0
+            for (n,j)in FAULT_coordinate:
+                fh.write("assign fault_reg_psum_"+str(n)+"_"+str(j)+" = reg_psum_"+str(n)+"_"+str(j)+sa_value[k]+";\n")
+                k = k+1
             
     
     ### instance module
@@ -163,25 +161,41 @@ if __name__ == "__main__":
     ## single PE組成的32*32SA，不引入SA22
     top_path = os.getcwd()
     sub_file = "SA32_random_fault.v" #file name
+    stuckat_fault_file = "sa_fault_info/stuckat_fault.txt"
     fault_coordinate_file = "fault_inject_coordinate.txt"
     module_name = "SA32"#module name
-    sub_dir  = "/home/wzc/master_project/verilog/systolic_array"#file path
+    sub_dir  = "/home/wzc/master_project/verilog/systolic_array/"#file path
     
     PE_number = 32 #PE number#
+    #---------------------
+    target_path = os.path.join(sub_dir,sub_file) 
+    stuckat_fault_path = os.path.join(sub_dir,stuckat_fault_file)
     #---------------------對PE INJECT FAULT
     NUM_FAULTY_PE = 76
     coordinate_path = os.path.join(sub_dir,fault_coordinate_file) 
     random_list = list(itertools.product(range(0,PE_number-1),range(0,PE_number-1))) #產生隨機座標
     FAULT_coordinate = random.sample(random_list,NUM_FAULTY_PE)
+    FAULT_coordinate = sorted(FAULT_coordinate, key=lambda coord: coord[0], reverse=True)
+    #print(FAULT_coordinate)
     with open(coordinate_path, "w") as fr: 
         fr.write(str(FAULT_coordinate))
-    #---------------------
-    target_path = os.path.join(sub_dir,sub_file) 
+        
+    #----PE fault-----更改錯誤PE下面一顆的INPUT--------------
+
+    sa_list = [" | 16'b0000000000000001"," | 16'b0000000000000010"," | 16'b0000000000000100"," | 16'b0000000000001000"," | 16'b0000000000010000"," | 16'b0000000000100000"," | 16'b0000000001000000"," | 16'b0000000010000000"," | 16'b0000000100000000"," | 16'b0000001000000000"," | 16'b0000010000000000"," | 16'b0000100000000000"," | 16'b0001000000000000"," | 16'b0010000000000000"," | 16'b0100000000000000"," | 16'b1000000000000000"," & 16'b1111111111111110"," & 16'b1111111111111101"," & 16'b1111111111111011"," & 16'b1111111111110111"," & 16'b1111111111101111"," & 16'b1111111111011111"," & 16'b1111111110111111"," & 16'b1111111101111111"," & 16'b1111111011111111"," & 16'b1111110111111111"," & 16'b1111101111111111"," & 16'b1111011111111111"," & 16'b1110111111111111"," & 16'b1101111111111111"," & 16'b1011111111111111"," & 16'b0111111111111111"]
+    with open(stuckat_fault_path,"w") as fn:
+        for j in range(PE_number):
+            for n in range(PE_number):
+                if ((n,(PE_number-1-j)) in FAULT_coordinate):
+                    sa_value = random.choice(sa_list)#random stuck at fault
+                    fn.write(str(sa_value)+"\n")
+                    
+  
     #------create file------------
     touch_file = ("touch "+sub_file)
     
     if not os.path.exists(target_path):
         os.chdir(sub_dir)
         os.system(str(touch_file))
-    write_SA(PE_number,FAULT_coordinate,target_path,module_name)
+    write_SA(PE_number,FAULT_coordinate,target_path,stuckat_fault_path,module_name)
 
