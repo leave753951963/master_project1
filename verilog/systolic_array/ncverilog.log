@@ -1,0 +1,673 @@
+ncverilog(64): 15.20-s039: (c) Copyright 1995-2017 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-s039: Started on Apr 02, 2024 at 16:00:34 CST
+ncverilog
+	SA32_random_fault.v
+file: SA32_random_fault.v
+	module worklib.PE:v
+		errors: 0, warnings: 0
+	module worklib.SA32:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+PE U0_31( .activation_in(reg_activation_0_30), .weight_in(in_weight_31), .partial_sum_in(in_psum_31), .reg_weight(reg_weight_0_31), .reg_partial_sum(reg_psum_0_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3311|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U1_31( .activation_in(reg_activation_1_30), .weight_in(reg_weight_0_31), .partial_sum_in(reg_psum_0_31), .reg_weight(reg_weight_1_31), .reg_partial_sum(reg_psum_1_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3343|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U2_31( .activation_in(reg_activation_2_30), .weight_in(reg_weight_1_31), .partial_sum_in(reg_psum_1_31), .reg_weight(reg_weight_2_31), .reg_partial_sum(reg_psum_2_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3375|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U3_31( .activation_in(reg_activation_3_30), .weight_in(reg_weight_2_31), .partial_sum_in(reg_psum_2_31), .reg_weight(reg_weight_3_31), .reg_partial_sum(reg_psum_3_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3407|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U4_31( .activation_in(reg_activation_4_30), .weight_in(reg_weight_3_31), .partial_sum_in(reg_psum_3_31), .reg_weight(reg_weight_4_31), .reg_partial_sum(reg_psum_4_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3439|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U5_31( .activation_in(reg_activation_5_30), .weight_in(reg_weight_4_31), .partial_sum_in(reg_psum_4_31), .reg_weight(reg_weight_5_31), .reg_partial_sum(reg_psum_5_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3471|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U6_31( .activation_in(reg_activation_6_30), .weight_in(reg_weight_5_31), .partial_sum_in(reg_psum_5_31), .reg_weight(reg_weight_6_31), .reg_partial_sum(reg_psum_6_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3503|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U7_31( .activation_in(reg_activation_7_30), .weight_in(reg_weight_6_31), .partial_sum_in(reg_psum_6_31), .reg_weight(reg_weight_7_31), .reg_partial_sum(reg_psum_7_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3535|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U8_31( .activation_in(reg_activation_8_30), .weight_in(reg_weight_7_31), .partial_sum_in(reg_psum_7_31), .reg_weight(reg_weight_8_31), .reg_partial_sum(reg_psum_8_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3567|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U9_31( .activation_in(reg_activation_9_30), .weight_in(reg_weight_8_31), .partial_sum_in(reg_psum_8_31), .reg_weight(reg_weight_9_31), .reg_partial_sum(reg_psum_9_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3599|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U10_31( .activation_in(reg_activation_10_30), .weight_in(reg_weight_9_31), .partial_sum_in(reg_psum_9_31), .reg_weight(reg_weight_10_31), .reg_partial_sum(reg_psum_10_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3631|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U11_31( .activation_in(reg_activation_11_30), .weight_in(reg_weight_10_31), .partial_sum_in(reg_psum_10_31), .reg_weight(reg_weight_11_31), .reg_partial_sum(reg_psum_11_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3663|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U12_31( .activation_in(reg_activation_12_30), .weight_in(reg_weight_11_31), .partial_sum_in(reg_psum_11_31), .reg_weight(reg_weight_12_31), .reg_partial_sum(reg_psum_12_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3695|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U13_31( .activation_in(reg_activation_13_30), .weight_in(reg_weight_12_31), .partial_sum_in(reg_psum_12_31), .reg_weight(reg_weight_13_31), .reg_partial_sum(reg_psum_13_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3727|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U14_31( .activation_in(reg_activation_14_30), .weight_in(reg_weight_13_31), .partial_sum_in(reg_psum_13_31), .reg_weight(reg_weight_14_31), .reg_partial_sum(reg_psum_14_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3759|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U15_31( .activation_in(reg_activation_15_30), .weight_in(reg_weight_14_31), .partial_sum_in(reg_psum_14_31), .reg_weight(reg_weight_15_31), .reg_partial_sum(reg_psum_15_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3791|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U16_31( .activation_in(reg_activation_16_30), .weight_in(reg_weight_15_31), .partial_sum_in(reg_psum_15_31), .reg_weight(reg_weight_16_31), .reg_partial_sum(reg_psum_16_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3823|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U17_31( .activation_in(reg_activation_17_30), .weight_in(reg_weight_16_31), .partial_sum_in(reg_psum_16_31), .reg_weight(reg_weight_17_31), .reg_partial_sum(reg_psum_17_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3855|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U18_31( .activation_in(reg_activation_18_30), .weight_in(reg_weight_17_31), .partial_sum_in(reg_psum_17_31), .reg_weight(reg_weight_18_31), .reg_partial_sum(reg_psum_18_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3887|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U19_31( .activation_in(reg_activation_19_30), .weight_in(reg_weight_18_31), .partial_sum_in(reg_psum_18_31), .reg_weight(reg_weight_19_31), .reg_partial_sum(reg_psum_19_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3919|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U20_31( .activation_in(reg_activation_20_30), .weight_in(reg_weight_19_31), .partial_sum_in(reg_psum_19_31), .reg_weight(reg_weight_20_31), .reg_partial_sum(reg_psum_20_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3951|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U21_31( .activation_in(reg_activation_21_30), .weight_in(reg_weight_20_31), .partial_sum_in(reg_psum_20_31), .reg_weight(reg_weight_21_31), .reg_partial_sum(reg_psum_21_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,3983|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U22_31( .activation_in(reg_activation_22_30), .weight_in(reg_weight_21_31), .partial_sum_in(reg_psum_21_31), .reg_weight(reg_weight_22_31), .reg_partial_sum(reg_psum_22_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4015|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U23_31( .activation_in(reg_activation_23_30), .weight_in(reg_weight_22_31), .partial_sum_in(reg_psum_22_31), .reg_weight(reg_weight_23_31), .reg_partial_sum(reg_psum_23_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4047|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U24_31( .activation_in(reg_activation_24_30), .weight_in(reg_weight_23_31), .partial_sum_in(reg_psum_23_31), .reg_weight(reg_weight_24_31), .reg_partial_sum(reg_psum_24_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4079|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U25_31( .activation_in(reg_activation_25_30), .weight_in(reg_weight_24_31), .partial_sum_in(reg_psum_24_31), .reg_weight(reg_weight_25_31), .reg_partial_sum(reg_psum_25_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4111|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U26_31( .activation_in(reg_activation_26_30), .weight_in(reg_weight_25_31), .partial_sum_in(reg_psum_25_31), .reg_weight(reg_weight_26_31), .reg_partial_sum(reg_psum_26_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4143|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U27_31( .activation_in(reg_activation_27_30), .weight_in(reg_weight_26_31), .partial_sum_in(reg_psum_26_31), .reg_weight(reg_weight_27_31), .reg_partial_sum(reg_psum_27_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4175|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U28_31( .activation_in(reg_activation_28_30), .weight_in(reg_weight_27_31), .partial_sum_in(reg_psum_27_31), .reg_weight(reg_weight_28_31), .reg_partial_sum(reg_psum_28_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4207|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U29_31( .activation_in(reg_activation_29_30), .weight_in(reg_weight_28_31), .partial_sum_in(reg_psum_28_31), .reg_weight(reg_weight_29_31), .reg_partial_sum(reg_psum_29_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4239|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U30_31( .activation_in(reg_activation_30_30), .weight_in(reg_weight_29_31), .partial_sum_in(reg_psum_29_31), .reg_weight(reg_weight_30_31), .reg_partial_sum(reg_psum_30_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4271|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE U31_0( .activation_in(in_activation_31), .weight_in(reg_weight_30_0), .partial_sum_in(reg_psum_30_0), .reg_activation(reg_activation_31_0), .reg_partial_sum(reg_psum_31_0), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4272|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_1( .activation_in(reg_activation_31_0), .weight_in(reg_weight_30_1), .partial_sum_in(reg_psum_30_1), .reg_activation(reg_activation_31_1), .reg_partial_sum(reg_psum_31_1), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4273|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_2( .activation_in(reg_activation_31_1), .weight_in(reg_weight_30_2), .partial_sum_in(reg_psum_30_2), .reg_activation(reg_activation_31_2), .reg_partial_sum(reg_psum_31_2), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4274|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_3( .activation_in(reg_activation_31_2), .weight_in(reg_weight_30_3), .partial_sum_in(reg_psum_30_3), .reg_activation(reg_activation_31_3), .reg_partial_sum(reg_psum_31_3), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4275|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_4( .activation_in(reg_activation_31_3), .weight_in(reg_weight_30_4), .partial_sum_in(reg_psum_30_4), .reg_activation(reg_activation_31_4), .reg_partial_sum(reg_psum_31_4), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4276|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_5( .activation_in(reg_activation_31_4), .weight_in(reg_weight_30_5), .partial_sum_in(reg_psum_30_5), .reg_activation(reg_activation_31_5), .reg_partial_sum(reg_psum_31_5), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4277|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_6( .activation_in(reg_activation_31_5), .weight_in(reg_weight_30_6), .partial_sum_in(reg_psum_30_6), .reg_activation(reg_activation_31_6), .reg_partial_sum(reg_psum_31_6), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4278|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_7( .activation_in(reg_activation_31_6), .weight_in(reg_weight_30_7), .partial_sum_in(reg_psum_30_7), .reg_activation(reg_activation_31_7), .reg_partial_sum(reg_psum_31_7), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4279|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_8( .activation_in(reg_activation_31_7), .weight_in(reg_weight_30_8), .partial_sum_in(reg_psum_30_8), .reg_activation(reg_activation_31_8), .reg_partial_sum(reg_psum_31_8), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4280|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_9( .activation_in(reg_activation_31_8), .weight_in(reg_weight_30_9), .partial_sum_in(reg_psum_30_9), .reg_activation(reg_activation_31_9), .reg_partial_sum(reg_psum_31_9), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4281|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_10( .activation_in(reg_activation_31_9), .weight_in(reg_weight_30_10), .partial_sum_in(reg_psum_30_10), .reg_activation(reg_activation_31_10), .reg_partial_sum(reg_psum_31_10), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4282|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_11( .activation_in(reg_activation_31_10), .weight_in(reg_weight_30_11), .partial_sum_in(reg_psum_30_11), .reg_activation(reg_activation_31_11), .reg_partial_sum(reg_psum_31_11), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4283|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_12( .activation_in(reg_activation_31_11), .weight_in(reg_weight_30_12), .partial_sum_in(reg_psum_30_12), .reg_activation(reg_activation_31_12), .reg_partial_sum(reg_psum_31_12), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4284|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_13( .activation_in(reg_activation_31_12), .weight_in(reg_weight_30_13), .partial_sum_in(reg_psum_30_13), .reg_activation(reg_activation_31_13), .reg_partial_sum(reg_psum_31_13), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4285|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_14( .activation_in(reg_activation_31_13), .weight_in(reg_weight_30_14), .partial_sum_in(reg_psum_30_14), .reg_activation(reg_activation_31_14), .reg_partial_sum(reg_psum_31_14), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4286|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_15( .activation_in(reg_activation_31_14), .weight_in(reg_weight_30_15), .partial_sum_in(reg_psum_30_15), .reg_activation(reg_activation_31_15), .reg_partial_sum(reg_psum_31_15), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4287|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_16( .activation_in(reg_activation_31_15), .weight_in(reg_weight_30_16), .partial_sum_in(reg_psum_30_16), .reg_activation(reg_activation_31_16), .reg_partial_sum(reg_psum_31_16), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4288|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_17( .activation_in(reg_activation_31_16), .weight_in(reg_weight_30_17), .partial_sum_in(reg_psum_30_17), .reg_activation(reg_activation_31_17), .reg_partial_sum(reg_psum_31_17), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4289|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_18( .activation_in(reg_activation_31_17), .weight_in(reg_weight_30_18), .partial_sum_in(reg_psum_30_18), .reg_activation(reg_activation_31_18), .reg_partial_sum(reg_psum_31_18), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4290|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_19( .activation_in(reg_activation_31_18), .weight_in(reg_weight_30_19), .partial_sum_in(reg_psum_30_19), .reg_activation(reg_activation_31_19), .reg_partial_sum(reg_psum_31_19), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4291|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_20( .activation_in(reg_activation_31_19), .weight_in(reg_weight_30_20), .partial_sum_in(reg_psum_30_20), .reg_activation(reg_activation_31_20), .reg_partial_sum(reg_psum_31_20), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4292|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_21( .activation_in(reg_activation_31_20), .weight_in(reg_weight_30_21), .partial_sum_in(reg_psum_30_21), .reg_activation(reg_activation_31_21), .reg_partial_sum(reg_psum_31_21), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4293|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_22( .activation_in(reg_activation_31_21), .weight_in(reg_weight_30_22), .partial_sum_in(reg_psum_30_22), .reg_activation(reg_activation_31_22), .reg_partial_sum(reg_psum_31_22), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4294|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_23( .activation_in(reg_activation_31_22), .weight_in(reg_weight_30_23), .partial_sum_in(reg_psum_30_23), .reg_activation(reg_activation_31_23), .reg_partial_sum(reg_psum_31_23), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4295|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_24( .activation_in(reg_activation_31_23), .weight_in(reg_weight_30_24), .partial_sum_in(reg_psum_30_24), .reg_activation(reg_activation_31_24), .reg_partial_sum(reg_psum_31_24), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4296|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_25( .activation_in(reg_activation_31_24), .weight_in(reg_weight_30_25), .partial_sum_in(reg_psum_30_25), .reg_activation(reg_activation_31_25), .reg_partial_sum(reg_psum_31_25), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4297|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_26( .activation_in(reg_activation_31_25), .weight_in(reg_weight_30_26), .partial_sum_in(reg_psum_30_26), .reg_activation(reg_activation_31_26), .reg_partial_sum(reg_psum_31_26), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4298|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_27( .activation_in(reg_activation_31_26), .weight_in(reg_weight_30_27), .partial_sum_in(reg_psum_30_27), .reg_activation(reg_activation_31_27), .reg_partial_sum(reg_psum_31_27), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4299|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_28( .activation_in(reg_activation_31_27), .weight_in(reg_weight_30_28), .partial_sum_in(reg_psum_30_28), .reg_activation(reg_activation_31_28), .reg_partial_sum(reg_psum_31_28), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4300|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_29( .activation_in(reg_activation_31_28), .weight_in(reg_weight_30_29), .partial_sum_in(reg_psum_30_29), .reg_activation(reg_activation_31_29), .reg_partial_sum(reg_psum_31_29), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4301|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_30( .activation_in(reg_activation_31_29), .weight_in(reg_weight_30_30), .partial_sum_in(reg_psum_30_30), .reg_activation(reg_activation_31_30), .reg_partial_sum(reg_psum_31_30), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4302|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE U31_31( .activation_in(reg_activation_31_30), .weight_in(reg_weight_30_31), .partial_sum_in(reg_psum_30_31), .reg_partial_sum(reg_psum_31_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,4303|8): 2 output ports were not connected:
+ncelab: (./PE.v,5): reg_activation
+ncelab: (./PE.v,6): reg_weight
+
+PE X0_31( .activation_in(spare_reg_activation_0_30), .weight_in(in_weight_31), .partial_sum_in(in_psum_31), .reg_weight(spare_reg_weight_0_31), .reg_partial_sum(spare_reg_psum_0_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7471|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X1_31( .activation_in(spare_reg_activation_1_30), .weight_in(spare_reg_weight_0_31), .partial_sum_in(spare_reg_psum_0_31), .reg_weight(spare_reg_weight_1_31), .reg_partial_sum(spare_reg_psum_1_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7503|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X2_31( .activation_in(spare_reg_activation_2_30), .weight_in(spare_reg_weight_1_31), .partial_sum_in(spare_reg_psum_1_31), .reg_weight(spare_reg_weight_2_31), .reg_partial_sum(spare_reg_psum_2_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7535|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X3_31( .activation_in(spare_reg_activation_3_30), .weight_in(spare_reg_weight_2_31), .partial_sum_in(spare_reg_psum_2_31), .reg_weight(spare_reg_weight_3_31), .reg_partial_sum(spare_reg_psum_3_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7567|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X4_31( .activation_in(spare_reg_activation_4_30), .weight_in(spare_reg_weight_3_31), .partial_sum_in(spare_reg_psum_3_31), .reg_weight(spare_reg_weight_4_31), .reg_partial_sum(spare_reg_psum_4_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7599|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X5_31( .activation_in(spare_reg_activation_5_30), .weight_in(spare_reg_weight_4_31), .partial_sum_in(spare_reg_psum_4_31), .reg_weight(spare_reg_weight_5_31), .reg_partial_sum(spare_reg_psum_5_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7631|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X6_31( .activation_in(spare_reg_activation_6_30), .weight_in(spare_reg_weight_5_31), .partial_sum_in(spare_reg_psum_5_31), .reg_weight(spare_reg_weight_6_31), .reg_partial_sum(spare_reg_psum_6_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7663|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X7_31( .activation_in(spare_reg_activation_7_30), .weight_in(spare_reg_weight_6_31), .partial_sum_in(spare_reg_psum_6_31), .reg_weight(spare_reg_weight_7_31), .reg_partial_sum(spare_reg_psum_7_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7695|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X8_31( .activation_in(spare_reg_activation_8_30), .weight_in(spare_reg_weight_7_31), .partial_sum_in(spare_reg_psum_7_31), .reg_weight(spare_reg_weight_8_31), .reg_partial_sum(spare_reg_psum_8_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7727|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X9_31( .activation_in(spare_reg_activation_9_30), .weight_in(spare_reg_weight_8_31), .partial_sum_in(spare_reg_psum_8_31), .reg_weight(spare_reg_weight_9_31), .reg_partial_sum(spare_reg_psum_9_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7759|7): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X10_31( .activation_in(spare_reg_activation_10_30), .weight_in(spare_reg_weight_9_31), .partial_sum_in(spare_reg_psum_9_31), .reg_weight(spare_reg_weight_10_31), .reg_partial_sum(spare_reg_psum_10_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7791|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X11_31( .activation_in(spare_reg_activation_11_30), .weight_in(spare_reg_weight_10_31), .partial_sum_in(spare_reg_psum_10_31), .reg_weight(spare_reg_weight_11_31), .reg_partial_sum(spare_reg_psum_11_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7823|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X12_31( .activation_in(spare_reg_activation_12_30), .weight_in(spare_reg_weight_11_31), .partial_sum_in(spare_reg_psum_11_31), .reg_weight(spare_reg_weight_12_31), .reg_partial_sum(spare_reg_psum_12_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7855|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X13_31( .activation_in(spare_reg_activation_13_30), .weight_in(spare_reg_weight_12_31), .partial_sum_in(spare_reg_psum_12_31), .reg_weight(spare_reg_weight_13_31), .reg_partial_sum(spare_reg_psum_13_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7887|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X14_31( .activation_in(spare_reg_activation_14_30), .weight_in(spare_reg_weight_13_31), .partial_sum_in(spare_reg_psum_13_31), .reg_weight(spare_reg_weight_14_31), .reg_partial_sum(spare_reg_psum_14_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7919|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X15_31( .activation_in(spare_reg_activation_15_30), .weight_in(spare_reg_weight_14_31), .partial_sum_in(spare_reg_psum_14_31), .reg_weight(spare_reg_weight_15_31), .reg_partial_sum(spare_reg_psum_15_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7951|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X16_31( .activation_in(spare_reg_activation_16_30), .weight_in(spare_reg_weight_15_31), .partial_sum_in(spare_reg_psum_15_31), .reg_weight(spare_reg_weight_16_31), .reg_partial_sum(spare_reg_psum_16_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,7983|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X17_31( .activation_in(spare_reg_activation_17_30), .weight_in(spare_reg_weight_16_31), .partial_sum_in(spare_reg_psum_16_31), .reg_weight(spare_reg_weight_17_31), .reg_partial_sum(spare_reg_psum_17_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8015|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X18_31( .activation_in(spare_reg_activation_18_30), .weight_in(spare_reg_weight_17_31), .partial_sum_in(spare_reg_psum_17_31), .reg_weight(spare_reg_weight_18_31), .reg_partial_sum(spare_reg_psum_18_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8047|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X19_31( .activation_in(spare_reg_activation_19_30), .weight_in(spare_reg_weight_18_31), .partial_sum_in(spare_reg_psum_18_31), .reg_weight(spare_reg_weight_19_31), .reg_partial_sum(spare_reg_psum_19_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8079|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X20_31( .activation_in(spare_reg_activation_20_30), .weight_in(spare_reg_weight_19_31), .partial_sum_in(spare_reg_psum_19_31), .reg_weight(spare_reg_weight_20_31), .reg_partial_sum(spare_reg_psum_20_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8111|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X21_31( .activation_in(spare_reg_activation_21_30), .weight_in(spare_reg_weight_20_31), .partial_sum_in(spare_reg_psum_20_31), .reg_weight(spare_reg_weight_21_31), .reg_partial_sum(spare_reg_psum_21_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8143|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X22_31( .activation_in(spare_reg_activation_22_30), .weight_in(spare_reg_weight_21_31), .partial_sum_in(spare_reg_psum_21_31), .reg_weight(spare_reg_weight_22_31), .reg_partial_sum(spare_reg_psum_22_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8175|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X23_31( .activation_in(spare_reg_activation_23_30), .weight_in(spare_reg_weight_22_31), .partial_sum_in(spare_reg_psum_22_31), .reg_weight(spare_reg_weight_23_31), .reg_partial_sum(spare_reg_psum_23_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8207|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X24_31( .activation_in(spare_reg_activation_24_30), .weight_in(spare_reg_weight_23_31), .partial_sum_in(spare_reg_psum_23_31), .reg_weight(spare_reg_weight_24_31), .reg_partial_sum(spare_reg_psum_24_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8239|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X25_31( .activation_in(spare_reg_activation_25_30), .weight_in(spare_reg_weight_24_31), .partial_sum_in(spare_reg_psum_24_31), .reg_weight(spare_reg_weight_25_31), .reg_partial_sum(spare_reg_psum_25_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8271|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X26_31( .activation_in(spare_reg_activation_26_30), .weight_in(spare_reg_weight_25_31), .partial_sum_in(spare_reg_psum_25_31), .reg_weight(spare_reg_weight_26_31), .reg_partial_sum(spare_reg_psum_26_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8303|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X27_31( .activation_in(spare_reg_activation_27_30), .weight_in(spare_reg_weight_26_31), .partial_sum_in(spare_reg_psum_26_31), .reg_weight(spare_reg_weight_27_31), .reg_partial_sum(spare_reg_psum_27_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8335|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X28_31( .activation_in(spare_reg_activation_28_30), .weight_in(spare_reg_weight_27_31), .partial_sum_in(spare_reg_psum_27_31), .reg_weight(spare_reg_weight_28_31), .reg_partial_sum(spare_reg_psum_28_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8367|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X29_31( .activation_in(spare_reg_activation_29_30), .weight_in(spare_reg_weight_28_31), .partial_sum_in(spare_reg_psum_28_31), .reg_weight(spare_reg_weight_29_31), .reg_partial_sum(spare_reg_psum_29_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8399|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X30_31( .activation_in(spare_reg_activation_30_30), .weight_in(spare_reg_weight_29_31), .partial_sum_in(spare_reg_psum_29_31), .reg_weight(spare_reg_weight_30_31), .reg_partial_sum(spare_reg_psum_30_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8431|8): 1 output port was not connected:
+ncelab: (./PE.v,5): reg_activation
+
+PE X31_0( .activation_in(in_activation_31), .weight_in(spare_reg_weight_30_0), .partial_sum_in(spare_reg_psum_30_0), .reg_activation(spare_reg_activation_31_0), .reg_partial_sum(spare_reg_psum_31_0), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8432|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_1( .activation_in(spare_reg_activation_31_0), .weight_in(spare_reg_weight_30_1), .partial_sum_in(spare_reg_psum_30_1), .reg_activation(spare_reg_activation_31_1), .reg_partial_sum(spare_reg_psum_31_1), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8433|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_2( .activation_in(spare_reg_activation_31_1), .weight_in(spare_reg_weight_30_2), .partial_sum_in(spare_reg_psum_30_2), .reg_activation(spare_reg_activation_31_2), .reg_partial_sum(spare_reg_psum_31_2), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8434|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_3( .activation_in(spare_reg_activation_31_2), .weight_in(spare_reg_weight_30_3), .partial_sum_in(spare_reg_psum_30_3), .reg_activation(spare_reg_activation_31_3), .reg_partial_sum(spare_reg_psum_31_3), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8435|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_4( .activation_in(spare_reg_activation_31_3), .weight_in(spare_reg_weight_30_4), .partial_sum_in(spare_reg_psum_30_4), .reg_activation(spare_reg_activation_31_4), .reg_partial_sum(spare_reg_psum_31_4), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8436|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_5( .activation_in(spare_reg_activation_31_4), .weight_in(spare_reg_weight_30_5), .partial_sum_in(spare_reg_psum_30_5), .reg_activation(spare_reg_activation_31_5), .reg_partial_sum(spare_reg_psum_31_5), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8437|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_6( .activation_in(spare_reg_activation_31_5), .weight_in(spare_reg_weight_30_6), .partial_sum_in(spare_reg_psum_30_6), .reg_activation(spare_reg_activation_31_6), .reg_partial_sum(spare_reg_psum_31_6), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8438|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_7( .activation_in(spare_reg_activation_31_6), .weight_in(spare_reg_weight_30_7), .partial_sum_in(spare_reg_psum_30_7), .reg_activation(spare_reg_activation_31_7), .reg_partial_sum(spare_reg_psum_31_7), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8439|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_8( .activation_in(spare_reg_activation_31_7), .weight_in(spare_reg_weight_30_8), .partial_sum_in(spare_reg_psum_30_8), .reg_activation(spare_reg_activation_31_8), .reg_partial_sum(spare_reg_psum_31_8), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8440|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_9( .activation_in(spare_reg_activation_31_8), .weight_in(spare_reg_weight_30_9), .partial_sum_in(spare_reg_psum_30_9), .reg_activation(spare_reg_activation_31_9), .reg_partial_sum(spare_reg_psum_31_9), .clk(clk), .rst(rst), .weight_en(weight_en));
+       |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8441|7): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_10( .activation_in(spare_reg_activation_31_9), .weight_in(spare_reg_weight_30_10), .partial_sum_in(spare_reg_psum_30_10), .reg_activation(spare_reg_activation_31_10), .reg_partial_sum(spare_reg_psum_31_10), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8442|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_11( .activation_in(spare_reg_activation_31_10), .weight_in(spare_reg_weight_30_11), .partial_sum_in(spare_reg_psum_30_11), .reg_activation(spare_reg_activation_31_11), .reg_partial_sum(spare_reg_psum_31_11), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8443|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_12( .activation_in(spare_reg_activation_31_11), .weight_in(spare_reg_weight_30_12), .partial_sum_in(spare_reg_psum_30_12), .reg_activation(spare_reg_activation_31_12), .reg_partial_sum(spare_reg_psum_31_12), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8444|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_13( .activation_in(spare_reg_activation_31_12), .weight_in(spare_reg_weight_30_13), .partial_sum_in(spare_reg_psum_30_13), .reg_activation(spare_reg_activation_31_13), .reg_partial_sum(spare_reg_psum_31_13), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8445|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_14( .activation_in(spare_reg_activation_31_13), .weight_in(spare_reg_weight_30_14), .partial_sum_in(spare_reg_psum_30_14), .reg_activation(spare_reg_activation_31_14), .reg_partial_sum(spare_reg_psum_31_14), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8446|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_15( .activation_in(spare_reg_activation_31_14), .weight_in(spare_reg_weight_30_15), .partial_sum_in(spare_reg_psum_30_15), .reg_activation(spare_reg_activation_31_15), .reg_partial_sum(spare_reg_psum_31_15), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8447|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_16( .activation_in(spare_reg_activation_31_15), .weight_in(spare_reg_weight_30_16), .partial_sum_in(spare_reg_psum_30_16), .reg_activation(spare_reg_activation_31_16), .reg_partial_sum(spare_reg_psum_31_16), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8448|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_17( .activation_in(spare_reg_activation_31_16), .weight_in(spare_reg_weight_30_17), .partial_sum_in(spare_reg_psum_30_17), .reg_activation(spare_reg_activation_31_17), .reg_partial_sum(spare_reg_psum_31_17), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8449|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_18( .activation_in(spare_reg_activation_31_17), .weight_in(spare_reg_weight_30_18), .partial_sum_in(spare_reg_psum_30_18), .reg_activation(spare_reg_activation_31_18), .reg_partial_sum(spare_reg_psum_31_18), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8450|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_19( .activation_in(spare_reg_activation_31_18), .weight_in(spare_reg_weight_30_19), .partial_sum_in(spare_reg_psum_30_19), .reg_activation(spare_reg_activation_31_19), .reg_partial_sum(spare_reg_psum_31_19), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8451|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_20( .activation_in(spare_reg_activation_31_19), .weight_in(spare_reg_weight_30_20), .partial_sum_in(spare_reg_psum_30_20), .reg_activation(spare_reg_activation_31_20), .reg_partial_sum(spare_reg_psum_31_20), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8452|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_21( .activation_in(spare_reg_activation_31_20), .weight_in(spare_reg_weight_30_21), .partial_sum_in(spare_reg_psum_30_21), .reg_activation(spare_reg_activation_31_21), .reg_partial_sum(spare_reg_psum_31_21), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8453|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_22( .activation_in(spare_reg_activation_31_21), .weight_in(spare_reg_weight_30_22), .partial_sum_in(spare_reg_psum_30_22), .reg_activation(spare_reg_activation_31_22), .reg_partial_sum(spare_reg_psum_31_22), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8454|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_23( .activation_in(spare_reg_activation_31_22), .weight_in(spare_reg_weight_30_23), .partial_sum_in(spare_reg_psum_30_23), .reg_activation(spare_reg_activation_31_23), .reg_partial_sum(spare_reg_psum_31_23), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8455|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_24( .activation_in(spare_reg_activation_31_23), .weight_in(spare_reg_weight_30_24), .partial_sum_in(spare_reg_psum_30_24), .reg_activation(spare_reg_activation_31_24), .reg_partial_sum(spare_reg_psum_31_24), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8456|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_25( .activation_in(spare_reg_activation_31_24), .weight_in(spare_reg_weight_30_25), .partial_sum_in(spare_reg_psum_30_25), .reg_activation(spare_reg_activation_31_25), .reg_partial_sum(spare_reg_psum_31_25), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8457|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_26( .activation_in(spare_reg_activation_31_25), .weight_in(spare_reg_weight_30_26), .partial_sum_in(spare_reg_psum_30_26), .reg_activation(spare_reg_activation_31_26), .reg_partial_sum(spare_reg_psum_31_26), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8458|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_27( .activation_in(spare_reg_activation_31_26), .weight_in(spare_reg_weight_30_27), .partial_sum_in(spare_reg_psum_30_27), .reg_activation(spare_reg_activation_31_27), .reg_partial_sum(spare_reg_psum_31_27), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8459|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_28( .activation_in(spare_reg_activation_31_27), .weight_in(spare_reg_weight_30_28), .partial_sum_in(spare_reg_psum_30_28), .reg_activation(spare_reg_activation_31_28), .reg_partial_sum(spare_reg_psum_31_28), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8460|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_29( .activation_in(spare_reg_activation_31_28), .weight_in(spare_reg_weight_30_29), .partial_sum_in(spare_reg_psum_30_29), .reg_activation(spare_reg_activation_31_29), .reg_partial_sum(spare_reg_psum_31_29), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8461|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_30( .activation_in(spare_reg_activation_31_29), .weight_in(spare_reg_weight_30_30), .partial_sum_in(spare_reg_psum_30_30), .reg_activation(spare_reg_activation_31_30), .reg_partial_sum(spare_reg_psum_31_30), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8462|8): 1 output port was not connected:
+ncelab: (./PE.v,6): reg_weight
+
+PE X31_31( .activation_in(spare_reg_activation_31_30), .weight_in(spare_reg_weight_30_31), .partial_sum_in(spare_reg_psum_30_31), .reg_partial_sum(spare_reg_psum_31_31), .clk(clk), .rst(rst), .weight_en(weight_en));
+        |
+ncelab: *W,CUVWSP (./SA32_random_fault.v,8463|8): 2 output ports were not connected:
+ncelab: (./PE.v,5): reg_activation
+ncelab: (./PE.v,6): reg_weight
+
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.PE:v <0x2b73602e>
+			streams:   5, words:  1157
+		worklib.PE:v <0x2bdc7e5d>
+			streams:   5, words:  1157
+		worklib.PE:v <0x6c745f20>
+			streams:   5, words:  1221
+		worklib.PE:v <0x6cdb4153>
+			streams:   5, words:  1087
+		worklib.SA32:v <0x3cf50708>
+			streams:   0, words:     0
+	Loading native compiled code:     .................... Done
+	Building instance specific data structures.
+	Design hierarchy summary:
+		               Instances  Unique
+		Modules:            2049       2
+		Registers:          6144       3
+		Scalar wires:          1       -
+		Vectored wires:     8197       -
+		Always blocks:      6144       3
+		Cont. assignments:  2048      71
+	Writing initial simulation snapshot: worklib.SA32:v
+Loading snapshot worklib.SA32:v .................... Done
+*Novas* Loading libsscore_ius111.so
+ncsim> source /usr/cad/cadence/INCISIV/INCISIVE_15.20.039/tools/inca/files/ncsimrc
+ncsim> run
+ncsim: *W,RNQUIE: Simulation is complete.
+ncsim> exit
+TOOL:	ncverilog	15.20-s039: Exiting on Apr 02, 2024 at 16:00:35 CST  (total: 00:00:01)

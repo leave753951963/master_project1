@@ -1,0 +1,15 @@
+wvSetPosition -win $_nWave1 {("G1" 0)}
+wvOpenFile -win $_nWave1 {/home/wzc/verilog/systolic_array/tb_PE.fsdb}
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/tb_PE"
+wvGetSignalSetScope -win $_nWave1 "/tb_PE/uut"
+wvGetSignalSetScope -win $_nWave1 "/tb_PE"
+wvGetSignalSetScope -win $_nWave1 "/tb_PE"
+wvGetSignalScopeHistory -win $_nWave1 -backward
+wvSetCursor -win $_nWave1 2188.114434
+wvGetSignalOpen -win $_nWave1
+wvSetFileTimeRange -win $_nWave1 -time_unit 1p 0 160000
+wvGetSignalOpen -win $_nWave1
+wvGetSignalSetScope -win $_nWave1 "/tb_PE/uut"
+wvGetSignalSetScope -win $_nWave1 "/tb_PE"
+wvExit

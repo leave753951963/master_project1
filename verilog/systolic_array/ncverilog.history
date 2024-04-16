@@ -1,0 +1,27 @@
+s1(05Mar2024:20:20:57):  ncverilog tb_PE.sv +access+r 
+s2(05Mar2024:20:33:22):  ncverilog tb_PE.sv +access+r 
+s3(05Mar2024:20:38:05):  ncverilog tb_PE.sv +access+r 
+s4(05Mar2024:20:39:17):  ncverilog tb_PE.sv +access+r 
+s5(05Mar2024:20:40:58):  ncverilog tb_PE.sv +access+r 
+s6(05Mar2024:20:41:50):  ncverilog tb_PE.sv +access+r 
+s7(05Mar2024:20:44:34):  ncverilog tb_PE.sv +access+r 
+s8(05Mar2024:21:04:11):  ncverilog tb_PE.sv +access+r 
+s9(05Mar2024:21:06:13):  ncverilog tb_PE.sv +access+r 
+s10(05Mar2024:21:07:16):  ncverilog tb_PE.sv +access+r 
+s11(05Mar2024:21:08:10):  ncverilog tb_PE.sv +access+r 
+s12(05Mar2024:21:11:12):  ncverilog tb_PE.sv +access+r 
+s13(05Mar2024:21:15:59):  ncverilog tb_PE.sv +access+r 
+s14(05Mar2024:21:22:01):  ncverilog tb_PE.sv +access+r 
+s15(05Mar2024:21:22:09):  ncverilog tb_PE.sv +access+r 
+s16(05Mar2024:21:22:56):  ncverilog tb_PE.sv +access+r 
+s17(05Mar2024:21:25:10):  ncverilog tb_PE.sv +access+r 
+s18(05Mar2024:21:25:18):  ncverilog tb_PE.sv +access+r 
+s19(22Mar2024:22:40:28):  ncverilog -c SA32_fault_test.v 
+s20(22Mar2024:22:45:04):  ncverilog -c SA32_fault_test.v 
+s21(22Mar2024:22:53:27):  ncverilog SA32_fault_test.v 
+s22(22Mar2024:22:54:29):  ncverilog SA32_fault_test.v 
+s23(22Mar2024:23:00:55):  ncverilog SA32_fault_test.v 
+s24(22Mar2024:23:15:05):  ncverilog SA32_fault_test.v 
+s25(22Mar2024:23:16:46):  ncverilog SA32_fault_test.v 
+s26(22Mar2024:23:19:53):  ncverilog SA32_fault_test.v 
+s27(02Apr2024:16:00:34):  ncverilog SA32_random_fault.v 
