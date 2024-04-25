@@ -13,6 +13,7 @@ def write_SA(PE_number,FAULT_coordinate,target_path,stuckat_fault_path,module_na
     num_column = PE_number//2
     with open(target_path, "w") as fh:
         fh.write('''`include "/home/wzc/master_project/verilog/systolic_array/PE.v"\n''')
+        fh.write('''`include "/home/wzc/master_project/verilog/approx_pe/PE_approx_SA.v"\n''')
         fh.write("module "+module_name+"(rst, clk, weight_en")
         for c in range(PE_number):#0~31
             fh.write(", in_weight_"+str(c))
@@ -114,7 +115,7 @@ def write_SA(PE_number,FAULT_coordinate,target_path,stuckat_fault_path,module_na
                         else:
                             fh.write("PE U"+str(r)+"_"+str(c)+"( .activation_in(reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_activation(reg_activation_"+str(r)+"_"+str(c)+"), .reg_weight(reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
     
-        #------額外替代column
+        #------額外替代column(使用approx)
         for r in range(PE_number): #0~31
             for c in range(PE_number): #0~31
                     fh.write("wire signed[15:0]    spare_reg_activation_"+str(r)+"_"+str(c)+";\n")
@@ -132,25 +133,25 @@ def write_SA(PE_number,FAULT_coordinate,target_path,stuckat_fault_path,module_na
             for c in range(PE_number): #column0~31
                 if(c == 0):       
                     if(r == 0):#weight,psum,activation are input
-                        fh.write("PE X"+str(r)+"_"+str(c)+"( .activation_in(in_activation_0), .weight_in(in_weight_0), .partial_sum_in(in_psum_0), .reg_activation(spare_reg_activation_0_0), .reg_weight(spare_reg_weight_0_0), .reg_partial_sum(spare_reg_psum_0_0), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
+                        fh.write("PE_approx_SA X"+str(r)+"_"+str(c)+"( .activation_in(in_activation_0), .weight_in(in_weight_0), .partial_sum_in(in_psum_0), .reg_activation(spare_reg_activation_0_0), .reg_weight(spare_reg_weight_0_0), .reg_partial_sum(spare_reg_psum_0_0), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
                     elif(r == PE_number-1):#activation is input/no outputweight
-                        fh.write("PE X"+str(r)+"_"+str(c)+"( .activation_in(in_activation_"+str(r)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_activation(spare_reg_activation_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
+                        fh.write("PE_approx_SA X"+str(r)+"_"+str(c)+"( .activation_in(in_activation_"+str(r)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_activation(spare_reg_activation_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
                     else:#activation is input
-                        fh.write("PE X"+str(r)+"_"+str(c)+"( .activation_in(in_activation_"+str(r)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_activation(spare_reg_activation_"+str(r)+"_"+str(c)+"), .reg_weight(spare_reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
+                        fh.write("PE_approx_SA X"+str(r)+"_"+str(c)+"( .activation_in(in_activation_"+str(r)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_activation(spare_reg_activation_"+str(r)+"_"+str(c)+"), .reg_weight(spare_reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
                 elif(c == PE_number-1):
                     if(r == 0):#weight,psum are input/no output activation 
-                        fh.write("PE X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(in_weight_"+str(c)+"), .partial_sum_in(in_psum_"+str(c)+"), .reg_weight(spare_reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
+                        fh.write("PE_approx_SA X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(in_weight_"+str(c)+"), .partial_sum_in(in_psum_"+str(c)+"), .reg_weight(spare_reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
                     elif(r == PE_number-1):#no output weight activation 
-                        fh.write("PE X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
+                        fh.write("PE_approx_SA X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
                     else:# no output ,activation    
-                        fh.write("PE X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_weight(spare_reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
+                        fh.write("PE_approx_SA X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_weight(spare_reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
                 else:
                     if(r == 0):#weight,psum are input
-                        fh.write("PE X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(in_weight_"+str(c)+"), .partial_sum_in(in_psum_"+str(c)+"), .reg_activation(spare_reg_activation_"+str(r)+"_"+str(c)+"), .reg_weight(spare_reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
+                        fh.write("PE_approx_SA X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(in_weight_"+str(c)+"), .partial_sum_in(in_psum_"+str(c)+"), .reg_activation(spare_reg_activation_"+str(r)+"_"+str(c)+"), .reg_weight(spare_reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
                     elif(r == PE_number-1):# no outputweight 
-                        fh.write("PE X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_activation(spare_reg_activation_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
+                        fh.write("PE_approx_SA X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_activation(spare_reg_activation_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
                     else:
-                        fh.write("PE X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_activation(spare_reg_activation_"+str(r)+"_"+str(c)+"), .reg_weight(spare_reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
+                        fh.write("PE_approx_SA X"+str(r)+"_"+str(c)+"( .activation_in(spare_reg_activation_"+str(r)+"_"+str(c-1)+"), .weight_in(spare_reg_weight_"+str(r-1)+"_"+str(c)+"), .partial_sum_in(spare_reg_psum_"+str(r-1)+"_"+str(c)+"), .reg_activation(spare_reg_activation_"+str(r)+"_"+str(c)+"), .reg_weight(spare_reg_weight_"+str(r)+"_"+str(c)+"), .reg_partial_sum(spare_reg_psum_"+str(r)+"_"+str(c)+"), .clk(clk), .rst(rst), .weight_en(weight_en));\n")
         
         
         fh.write("endmodule")    
@@ -165,13 +166,13 @@ if __name__ == "__main__":
     fault_coordinate_file = "fault_inject_coordinate.txt"
     module_name = "SA32"#module name
     sub_dir  = "/home/wzc/master_project/verilog/systolic_array/"#file path
-    
+
     PE_number = 32 #PE number#
     #---------------------
     target_path = os.path.join(sub_dir,sub_file) 
     stuckat_fault_path = os.path.join(sub_dir,stuckat_fault_file)
     #---------------------對PE INJECT FAULT
-    NUM_FAULTY_PE = 76
+    NUM_FAULTY_PE = 92
     coordinate_path = os.path.join(sub_dir,fault_coordinate_file) 
     random_list = list(itertools.product(range(0,PE_number-1),range(0,PE_number-1))) #產生隨機座標
     FAULT_coordinate = random.sample(random_list,NUM_FAULTY_PE)
